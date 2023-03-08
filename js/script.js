@@ -55,5 +55,5 @@ console.log(impiegati);
 //ListaImpiegatiEl.append(impiegati); così è inefficace
 //applico il ciclo for in perché forse così ottengo la stampa in pagina di ogni elemento
 for (let key in impiegati) {
-    console.log(key);
+    console.log(key + ": " + impiegati[0]);
 }
