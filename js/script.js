@@ -4,7 +4,9 @@
 //Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
 //creare variabili su elementi HTML
-const ListaImpiegatiEl = document.getElementById('contenitore-profili');
+const contImpiegatiEl = document.getElementById('contenitore-profili');
+const listaImpiegatiEl = document.createElement("ul");
+contImpiegatiEl.append(listaImpiegatiEl);
 
 //creare array principale
 const impiegati = [
@@ -57,9 +59,13 @@ const impiegati = [
 
 
 for (let i = 0; i< impiegati.length; i++) {
-      ListaImpiegatiEl.innerHTML = `${impiegati[i].nome}`;
-      ListaImpiegatiEl.innerHTML = `${impiegati[i].cognome}`;
-    //   ListaImpiegatiEl.innerHTML = `${impiegati[i].ruolo}`;
+    let teamMember = document.createElement("li");
+    teamMember.append(`${impiegati[i].nome} `);
+    teamMember.append(`${impiegati[i].cognome} - `);
+    teamMember.append(`${impiegati[i].ruolo} - `);
+    teamMember.append(`${impiegati[i].foto}`);
+
+    listaImpiegatiEl.append(teamMember);
 
     for (let key in impiegati[i]) {
         console.log(key + ": " + impiegati[i][key]);
