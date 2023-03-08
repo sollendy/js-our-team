@@ -50,10 +50,18 @@ const impiegati = [
         foto: "https://github.com/sollendy/js-our-team/blob/main/img/wayne-barnett-founder-ceo.jpg",
     },
 ];
-console.log(impiegati);
+//console.log(impiegati);
 //adesso vedo come vengono stampati in pagina gli elementi
 //ListaImpiegatiEl.append(impiegati); così è inefficace
-//applico il ciclo for in perché forse così ottengo la stampa in pagina di ogni elemento
-for (let key in impiegati) {
-    console.log(key + ": " + impiegati[0]);
+//applico il ciclo prima for in modo tale da prendere gli elementi dell'array uno per uno e poi for in perché forse così ottengo la stampa in pagina di ogni elemento
+
+
+for (let i = 0; i< impiegati.length; i++) {
+      ListaImpiegatiEl.innerHTML = `${impiegati[i].nome}`;
+      ListaImpiegatiEl.innerHTML = `${impiegati[i].cognome}`;
+    //   ListaImpiegatiEl.innerHTML = `${impiegati[i].ruolo}`;
+
+    for (let key in impiegati[i]) {
+        console.log(key + ": " + impiegati[i][key]);
+    }
 }
